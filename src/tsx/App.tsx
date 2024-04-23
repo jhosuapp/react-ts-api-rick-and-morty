@@ -1,15 +1,13 @@
-import { Example } from './components/Example';
-import type { MouseEventHandler } from 'react';
+//Components
+import { HeroSection } from "./components/HeroSection";
+import { Header } from "./components/layout/Header";
 
 function App() {
 
-  const handleClick:MouseEventHandler<HTMLHeadingElement> = (e):void =>{
-      console.log(e);
-  }
-
   return (
     <>
-      <Example onClick={ handleClick }  className='test' text={"Hola mundo"} />
+      <Header />
+      <HeroSection className="hero-section" />
     </>
   )
 }

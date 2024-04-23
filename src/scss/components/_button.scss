@@ -1,7 +1,7 @@
 @use '../base/functions' as fun;
 
 .btn{
-    border: 2px solid fun.color('secondary');
+    border: 2px solid fun.color('fifthy');
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -12,7 +12,7 @@
     height: 40px;
     position: relative;
     color: fun.color('white');
-    background-color: fun.color('secondary');
+    background-color: fun.color('fifthy');
     overflow: hidden;
     transition: .5s ease all;
     cursor: pointer;
@@ -34,9 +34,6 @@
         background-color: fun.color('primary');
         z-index: -1;
     }
-    &--secondary{
-        background-color: transparent;
-    }
     &--danger{
         background-color: fun.color('danger') !important;
         border-color: fun.color('danger');
@@ -52,17 +49,6 @@
         &::before,
         &::after{
             height: 210%;
-        }
-    }
-    &--tertiary{
-        border: 2px solid fun.color('white');
-        &:hover{
-            border-color: fun.color('cuartary') !important;
-            color: fun.color('white');
-            &::after,
-            &::before{
-                background-color: fun.color('cuartary');
-            }
         }
     }
     &--icon{

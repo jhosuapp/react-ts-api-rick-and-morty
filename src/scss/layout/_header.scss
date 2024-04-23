@@ -1,2 +1,52 @@
 @use '../base/functions' as fun;
 @use '../base/variables' as var;
+
+header{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    svg{
+        width: 4.5rem;
+        transition: .5s ease fill;
+        &:hover{
+            fill: fun.color('primary');
+        }
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 2rem;
+        li:not(.btn) a{
+            font-size: 1.6rem;
+            color: fun.color('fifthy');
+            font-weight: 600;
+            position: relative;
+            transition: .5s ease color;
+            &::before{
+                content: "";
+                width: 0;
+                background-color: fun.color('primary');
+                height: 2px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                transition: .5s ease width;
+            }
+            &:hover{
+                color: fun.color('primary');
+                &::before{
+                    width: 100%;
+                    right: unset;
+                    left: 0;
+                }
+            }
+        }
+        .btn a{
+            color: fun.color('white');
+        }
+    }
+}

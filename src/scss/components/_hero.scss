@@ -1,0 +1,11 @@
+.hero-section{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    padding: 2rem 0;
+    img{
+        width: 100%;
+        filter: grayscale(100%);
+    }
+}
