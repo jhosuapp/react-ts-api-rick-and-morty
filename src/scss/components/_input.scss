@@ -1,0 +1,47 @@
+@use '../base/functions' as fun;
+
+.custom-input{
+    input{
+        border: 2px solid fun.color('secondary');
+        border-radius: 5px;
+        padding: 10px;
+        outline: inherit;
+        width: 100%;
+        transition: .5s ease box-shadow;
+        font-size: 1.4rem;
+        &:focus{
+            box-shadow: 0 0 5px #d3d3d3;
+        }
+    }
+    label{
+        font-size: 1.4rem;
+        color: fun.color('primary');
+        font-weight: 500;
+        margin-bottom: 5px;
+        display: flex;
+    }
+    .block-input{
+        margin-bottom: 20px;
+    }
+    .block-image{
+        .block{
+            border: 2px solid fun.color('secondary');
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        img{
+            width: 100%;
+            max-width: 200px;
+            max-height: 50px;
+            object-fit: contain;
+            margin: auto;
+        }
+    }
+    .block-actions{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+}

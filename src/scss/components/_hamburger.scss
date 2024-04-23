@@ -1,0 +1,46 @@
+.hamburger{
+    width: 32.5px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    span{
+        width: 100%;
+        background-color: fun.color('white');
+        height: 2px;
+        position: absolute;
+        transition: .5s ease all;
+        left: 0;
+        &:first-child{
+            top: 0;
+        }
+        &:last-child{
+            bottom: 0;
+        }
+    }
+    &.active{
+        span{
+            &:first-child{
+                left: 0;
+                transform: rotate(45deg);
+                top: unset;
+            }
+            &:nth-child(2){
+                width: 0;
+            }
+            &:last-child{
+                left: 0;
+                transform: rotate(-45deg);
+                bottom: unset;
+            }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .hamburger{
+        display: flex;
+    }
+}

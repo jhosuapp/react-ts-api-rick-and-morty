@@ -1,0 +1,96 @@
+@use '../base/functions' as fun;
+
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    top: -110%;
+    transition: .5s ease top;
+    &.active{
+        top: 0;
+    }
+    &__bg{
+        background-color: rgb(0,0,0, .95);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    &__content{
+        background-color: fun.color('white');
+        width: 90%;
+        max-width: 500px;
+        padding: 40px 60px;
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 15px fun.color('secondary');
+        p{
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btn{
+            max-width: 300px;
+            margin: auto;
+        }
+        picture{
+            width: 90%;
+            max-width: 100px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            img{
+                width: 100%;
+
+            }
+        }
+    }
+    .block{
+        display: flex;
+        gap: 20px;
+        .btn{
+            flex: 1;
+        }
+    }
+    &--error{
+        .modal__content{
+            box-shadow: 0 0 15px fun.color('danger');
+            .btn{
+                background-color: fun.color('danger');
+                border-color: fun.color('danger');
+            }
+        }
+    }
+    &--success{
+        .modal__content{
+            box-shadow: 0 0 15px fun.color('success');
+            .btn{
+                background-color: fun.color('success');
+                border-color: fun.color('success');
+            }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .modal{
+        .block{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .btn{
+                min-height: 40px;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+//PALETA DE COLORES
+$palette:(
+    'white': #fff,
+    'black': #000,
+    'primary': #0c2d57,
+    'secondary': #a374ff,
+    'tertiary': #0c2d57,
+    'cuartary': #680CFF,
+    'danger': #e76363,
+    'success': #49cc49,
+    'bg': rgb(241, 241, 241)
+);
+//BREAKPOINTS
+$breakpoints: (
+    'desktop': 1440px,
+    'laptop': 1280px,
+    'laptop-small': 1100px,
+    'ipad-big': 992px,
+    'ipad-small': 768px,
+    'mobile': 576px
+);
+//OTHERS
+$transition-duration: 0.3s;
+$limit-width: 1300px;
+$height-header: 65px;

@@ -1,0 +1,22 @@
+@use '../base/functions' as fun;
+@use '../base/variables' as var;
+
+main{
+    padding-top: var.$height-header;
+    background-color: fun.color('bg');
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.container{
+    margin: auto;
+    width: 90%;
+    max-width: var.$limit-width;
+    position: relative;
+    &--bg{
+        background-color: fun.color('white');
+        padding: 20px;
+        margin-top: 30px;
+        border: 2px solid rgb(236, 236, 236);
+    }
+}

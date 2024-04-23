@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Regular.ttf"), url("../../fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Medium.ttf"), url("../../fonts/Roboto-Medium.ttf");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Bold.ttf"), url("../../fonts/Roboto-Bold.ttf");
+    font-weight: 800;
+    font-display: swap;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li,
+label,
+option,
+th,
+td,
+tr,
+em,
+strong,
+b,
+div,
+input,
+button,
+input::placeholder,
+::before,
+::after {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+}
