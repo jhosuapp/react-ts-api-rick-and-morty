@@ -1,5 +1,6 @@
-//Header item
-import { HeaderItem } from "./HeaderItem"
+//Header item &&  hamburger
+import { HeaderItem } from "./HeaderItem";
+import { HeaderHamburger } from "./HeaderHamburger";
 //Routes
 import { Link } from "react-router-dom"
 
@@ -16,6 +17,7 @@ const Header = ():JSX.Element=>{
                     <HeaderItem className={'btn'}  text={'Documentation'} href={'hola'} />
                 </ul>
             </nav>
+            <HeaderHamburger />
         </header>
     )
 }

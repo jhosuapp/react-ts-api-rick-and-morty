@@ -1,0 +1,36 @@
+
+@keyframes hamburger-top{
+    from{
+        top: 0;
+    }
+    to{
+        top: calc(50% - 0.5px);
+    }
+}
+
+@keyframes hamburger-bottom{
+    from{
+        bottom: 0;
+    }
+    to{
+        bottom: calc(50% - 0.5px);
+    }
+}
+
+@keyframes hamburger-top-reverse {
+    from {
+        top: calc(50% - 0.5px);
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes hamburger-bottom-reverse {
+    from {
+        bottom: calc(50% - 0.5px);
+    }
+    to {
+        bottom: 0;
+    }
+}
