@@ -1,11 +1,8 @@
 @use '../base/functions' as fun;
 @use '../base/variables' as var;
 
-main{
-    padding-top: var.$height-header;
+body{
     background-color: fun.color('bg');
-    min-height: 100vh;
-    padding-bottom: 60px;
 }
 
 .container{
