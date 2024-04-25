@@ -3,6 +3,8 @@
 
 body{
     background-color: fun.color('bg');
+    position: relative;
+    overflow-x: hidden;
 }
 
 .container{
@@ -11,10 +13,18 @@ body{
     max-width: var.$limit-width;
     position: relative;
     &--bg{
-        background-color: fun.color('white');
-        padding: 20px;
-        margin-top: 30px;
-        border: 2px solid rgb(236, 236, 236);
+        background-color: fun.color('bg-dark');
+        padding: 60px 0;
+        position: relative;
+        background-color: fun.color('bg-dark');
+    }
+    &--relative{
+        position: relative;
+    }
+    &--center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

@@ -1,11 +1,25 @@
 .hero-section{
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    padding: 2rem 0;
-    img{
-        width: 100%;
-        filter: grayscale(100%);
+    .hero-item{
+        &:first-child{
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            padding: 4rem 0 10rem 0;
+            img{
+                width: 100%;
+                filter: grayscale(100%);
+            }
+        }
+        &:last-child{
+            position: absolute;
+            bottom: 0;
+            width: 70%;
+            max-width: 300px;
+            z-index: -1;
+            img{
+                width: 100%;
+            }
+        }
     }
 }

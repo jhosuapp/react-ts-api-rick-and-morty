@@ -10,7 +10,7 @@ header{
     align-items: center;
     padding: 1.5rem 0;
     z-index: 9;
-    svg{
+    svg, img{
         width: 4.5rem;
         transition: .5s ease fill;
         &:hover{
@@ -57,6 +57,9 @@ header{
     header{
         position: fixed;
         left: 5%;
+        svg, img{
+            width: 4rem;
+        }
         > a{
             position: relative;
             z-index: 1;
@@ -64,6 +67,7 @@ header{
         &.active{
             nav{
                 left: 0;
+                opacity: 1;
             }
         }
         nav{
@@ -74,12 +78,13 @@ header{
             align-items: center;
             justify-content: center;
             top: 0;
+            opacity: 0;
             left: -110%;
-            transition: 1s ease left;
+            transition: 1s ease all;
             &::before{
                 content: "";
-                width: 110%;
-                left: -5%;
+                width: 111%;
+                left: -5.5%;
                 position: absolute;
                 height: 100%;
                 background-color: fun.color('white');
