@@ -8,6 +8,10 @@
     p{
         color: fun.color('white');
         font-size: 1.5rem;
+        transition: .5s ease color;
+        body.light & {
+            color: fun.color('primary');
+        }
     }
     label{
         border: 1px solid fun.color('white');

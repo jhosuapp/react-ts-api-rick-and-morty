@@ -42,6 +42,13 @@
         background-color: fun.color('success');
         border-color: fun.color('success');
     }
+    &--icon{
+        gap: 10px;
+        img{
+            width: 15px;
+            filter: brightness(1000000%);
+        }
+    }
     &:hover{
         background: transparent;
         color: fun.color('white');
@@ -51,11 +58,14 @@
             height: 210%;
         }
     }
-    &--icon{
-        gap: 10px;
-        img{
-            width: 15px;
-            filter: brightness(1000000%);
+    body.light &{
+        background-color: fun.color('primary');
+        border-color: fun.color('primary');
+        &::after{
+            background-color: fun.color('fifthy');
+        }
+        &:hover{
+            border-color: fun.color('fifthy');
         }
     }
 }

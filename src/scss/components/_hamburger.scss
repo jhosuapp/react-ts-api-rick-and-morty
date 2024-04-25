@@ -23,6 +23,9 @@
         &:last-child{
             bottom: 0;
         }
+        body.light & {
+            background-color: fun.color('primary');
+        }
     }
     &:not(.active) {
         span {

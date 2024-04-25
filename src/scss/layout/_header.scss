@@ -12,9 +12,16 @@ header{
     z-index: 101;
     svg, img{
         width: 4.5rem;
-        transition: .5s ease fill;
+        transition: .5s ease all;
+        filter: brightness(0.3)  grayscale(100%);
         &:hover{
-            fill: fun.color('primary');
+            filter: none;
+        }
+        body.light &{
+            filter: none;
+            &:hover{
+                filter: brightness(0.3)  grayscale(100%);
+            }
         }
     }
     ul{
@@ -46,9 +53,20 @@ header{
                     left: 0;
                 }
             }
+            body.light &{
+                color: fun.color('primary');
+                &::before{
+                    background-color: fun.color('fifthy');
+                }
+                &:hover{
+                    color: fun.color('fifthy');
+                }
+            }
         }
-        .btn a{
-            color: fun.color('white');
+        .btn {
+            a{
+                color: fun.color('white');
+            }
         }
     }
 }

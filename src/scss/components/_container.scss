@@ -5,6 +5,10 @@ body{
     background-color: fun.color('bg');
     position: relative;
     overflow-x: hidden;
+    transition: .5s ease background-color;
+    &.light{
+        background-color: fun.color('white');
+    }
 }
 
 .container{

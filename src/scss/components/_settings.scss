@@ -26,6 +26,7 @@
             border-right: none;
             display: flex;
             pointer-events: all;
+            margin-right: -0.5px;
             picture{
                 width: 100%;
                 max-width: 25px;
@@ -37,6 +38,9 @@
                 animation: settings 1s linear infinite;
             }
             &:hover{
+                background-color: fun.color('primary');
+            }
+            body.light & {
                 background-color: fun.color('primary');
             }
         }
@@ -64,6 +68,10 @@
             border-left: none;
             border-right: none;
             backdrop-filter: blur(16px);
+            body.light & {
+                background-color: fun.color('white');
+                border-right: 1px solid fun.color('primary');
+            }
         }
     }
     &.active{
