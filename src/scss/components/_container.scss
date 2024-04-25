@@ -17,6 +17,7 @@ body{
         padding: 60px 0;
         position: relative;
         background-color: fun.color('bg-dark');
+        min-height: 100vh;
     }
     &--relative{
         position: relative;

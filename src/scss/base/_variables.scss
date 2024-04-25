@@ -10,7 +10,9 @@ $palette:(
     'danger': #e76363,
     'success': #49cc49,
     'bg': rgb(241, 241, 241),
-    'bg-dark': #272B33
+    'bg-dark': #272B33,
+    'bg-dark-heavy': rgb(0,0,0, .65),
+    'bg-dark-light': rgb(0,0,0, .15),
 );
 //BREAKPOINTS
 $breakpoints: (
