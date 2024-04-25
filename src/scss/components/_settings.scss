@@ -11,11 +11,13 @@
     top: 0;
     transition: .5s ease right;
     transition-delay: .5s;
+    pointer-events: none;
     article{
         position: relative;
         z-index: 1;
         height: 47.5px;
-        transition: .5s ease height;
+        transition: .5s ease;
+        transition-property: height, background-color;
         &:first-child{
             background-color: fun.color('bg-dark');
             padding: 10px;
@@ -23,6 +25,7 @@
             border: 1px solid fun.color('white');
             border-right: none;
             display: flex;
+            pointer-events: all;
             picture{
                 width: 100%;
                 max-width: 25px;
@@ -32,6 +35,9 @@
                 width: 100%;
                 filter: brightness(100000000000%);
                 animation: settings 1s linear infinite;
+            }
+            &:hover{
+                background-color: fun.color('primary');
             }
         }
         &:nth-child(2){
@@ -57,20 +63,25 @@
             border: 1px solid fun.color('white');
             border-left: none;
             border-right: none;
+            backdrop-filter: blur(16px);
         }
     }
     &.active{
         right: 0;
+        pointer-events: inherit;
         article:not(#close-settings){
             max-height: 50vh;
             height: 50vh;
+        }
+        article:first-child{
+            background-color: fun.color('primary');
         }
         article:nth-child(2){
             opacity: 1;
             pointer-events: inherit;
         }
         article:last-child{
-            backdrop-filter: blur(16px);
+            background-color: fun.color('bg-dark');
             padding: 20px;
         }
     }

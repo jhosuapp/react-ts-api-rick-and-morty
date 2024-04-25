@@ -1,0 +1,48 @@
+@use '../base/functions' as fun;
+
+.switch{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        color: fun.color('white');
+        font-size: 1.5rem;
+    }
+    label{
+        border: 1px solid fun.color('white');
+        display: flex;
+        padding: 5px;
+        width: fit-content;
+        min-width: 50px;
+        border-radius: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+    input{
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background-color: fun.color('white');
+        border-radius: 100px;
+        transition: .5s ease all;
+        left: 0;
+        pointer-events: none;
+        &::before{
+            content: "";
+            width: 50px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: .5s ease background-color;
+        }
+        &:checked{
+            margin-left: calc(100% - 15px);
+            &::before{
+                background-color: fun.color('primary');
+            }
+        }
+    }
+}

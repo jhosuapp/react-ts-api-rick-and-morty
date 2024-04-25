@@ -22,7 +22,6 @@ const Settings = ():JSX.Element=>{
             </article>
             <article onClick={ handelClick } id="close-settings"></article>
             <article>
-                <p>hola</p>
                 <DarkLightMode />
             </article>
         </section>
