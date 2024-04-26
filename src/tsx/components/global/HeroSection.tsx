@@ -1,10 +1,10 @@
-import imageHero from '../../assets/png/rick-and-morty.png';
+import imageHero from '../../../assets/png/rick-and-morty.png';
 //Types
 import { HTMLAttributes } from 'react';
 //Components
 import { Container } from './Container';
 //Icon
-import bg from '../../assets/svg/bg.svg';
+import bg from '../../../assets/svg/bg.svg';
 
 type Props = HTMLAttributes<HTMLImageElement>;
 

@@ -25,6 +25,7 @@
                 width: 100%;
                 filter: unset;
                 transition: .5s ease filter;
+                margin-bottom: -3px;
                 body.light & {
                     filter: grayscale(100%) brightness(0.95);
                 }

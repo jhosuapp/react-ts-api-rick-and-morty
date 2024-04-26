@@ -1,6 +1,6 @@
 //Components
-import { HeroSection } from "../../components/HeroSection";;
-import { Container } from "../Container";
+import { HeroSection } from '../global/HeroSection';
+import { Container } from '../global/Container';
 
 const Home = ():JSX.Element=>{
     return (
