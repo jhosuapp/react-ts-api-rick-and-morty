@@ -17,7 +17,7 @@ const DarkLightMode = ():JSX.Element=>{
 
     return(
         <>
-            <Switch name_input='dark-light' handleEvent={ handleEventDarkLight }/>
+            <Switch name_input='dark-light' text={'Light mode'} handleEvent={ handleEventDarkLight }/>
         </>
     )
 }

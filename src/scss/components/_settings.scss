@@ -68,6 +68,9 @@
             border-left: none;
             border-right: none;
             backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             body.light & {
                 background-color: fun.color('white');
                 border-right: 1px solid fun.color('primary');

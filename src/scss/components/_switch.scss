@@ -22,6 +22,9 @@
         border-radius: 100px;
         position: relative;
         overflow: hidden;
+        body.light &{
+            border-color: fun.color('primary');
+        }
     }
     input{
         appearance: none;
@@ -41,6 +44,11 @@
             top: 0;
             z-index: -1;
             transition: .5s ease background-color;
+        }
+        body.light &{
+            &:not(:checked){
+                background-color: fun.color('primary');
+            }
         }
         &:checked{
             margin-left: calc(100% - 15px);

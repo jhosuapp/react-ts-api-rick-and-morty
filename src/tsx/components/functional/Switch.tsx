@@ -5,10 +5,11 @@ import type { MouseEventHandler } from 'react';
 //Custom types
 type Props = {
     name_input: string
+    text: string,
     handleEvent?: (parameter:HTMLInputElement) => void
 }
 
-const Switch = ({ handleEvent, name_input } : Props):JSX.Element =>{
+const Switch = ({ handleEvent, name_input, text } : Props):JSX.Element =>{
     //State checkbox and ref checkbox
     const [ checked, setChecked ] = useState<boolean>(localStorage.getItem(name_input) ? true : false);
     const node = useRef<HTMLInputElement>(null);
@@ -30,12 +31,12 @@ const Switch = ({ handleEvent, name_input } : Props):JSX.Element =>{
 
     return (
         <fieldset className="switch">
-            <p>Light mode ({checked ? 'on' : 'off'})</p>
-            <label htmlFor={`check-${name_input}`}>
+            <p>{ text } ({checked ? 'on' : 'off'})</p>
+            <label htmlFor={`check-${ name_input }`}>
                 <input 
                     type="checkbox" 
-                    name={`check-${name_input}`} 
-                    id={`check-${name_input}`} 
+                    name={`check-${ name_input }`} 
+                    id={`check-${ name_input }`} 
                     onClick={ handleClickCheckbox }
                     ref={ node }
                 />
