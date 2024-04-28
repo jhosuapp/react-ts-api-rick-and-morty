@@ -13,7 +13,7 @@ const GlobalContext = createContext<ContextType | undefined>(undefined);
  
 const GlobalProvider = ({ children }: Props)=>{
     //States
-    const [globalLight, setGlobalLight] = useState<string>('');
+    const [globalLight, setGlobalLight] = useState<string>(localStorage.getItem('light') || '');
 
     return (
         <GlobalContext.Provider value={{

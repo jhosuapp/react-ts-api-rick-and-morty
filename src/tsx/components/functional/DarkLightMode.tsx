@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Switch } from './Switch';
 //Context
 import { GlobalContext } from '../../context/GlobalContext';
@@ -6,18 +6,21 @@ import { GlobalContext } from '../../context/GlobalContext';
 const DarkLightMode = ():JSX.Element=>{
     //My context
     const { globalLight } = useContext(GlobalContext) || {};
-    //Validate if globallight exists
-    globalLight && document.body.classList.add('light');
+    //Validate light cls
+    useEffect(()=>{
+        const body:HTMLElement = document.body;
+        globalLight ? body.classList.add('light') : body.classList.remove('light');
+    }, []);
     //Handler for event
     const handleEventDarkLight = (parameter:HTMLInputElement):void=>{
-        const body = parameter?.closest('body');
+        const body = parameter.closest('body');
         body?.classList.toggle('light');
         body?.classList.contains?.('light') ? localStorage.setItem('light', 'light') : localStorage.removeItem('light');
     }
 
     return(
         <>
-            <Switch handleEvent={ handleEventDarkLight }/>
+            <Switch name_input='dark-light' handleEvent={ handleEventDarkLight }/>
         </>
     )
 }
