@@ -1,0 +1,111 @@
+@use '../base/functions' as fun;
+
+.list-characters{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    a{
+        display: flex;
+        align-items: center;
+        flex: 1 400px;
+        max-width: 50%;
+        background-color: rgb(60, 62, 68);
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        body.light & {
+            background-color: white;
+        }
+        picture{
+            width: 100%;
+            max-width: 225px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            img{
+                height: 100%;
+                width: 100%;
+                transition: .5s ease transform;
+            }
+        }
+        ul{
+            list-style: none;
+            padding: 20px;
+        }
+        p, h2, h5{
+            color: fun.color('white');
+            body.light &{
+                color: fun.color('primary');
+            }
+        }
+        p{
+            font-size: 1.7rem;
+            body.light &{
+                color: fun.color('bg-dark');
+            }
+        }
+        h2{
+            font-size: 2.5rem;
+        }
+        h5{
+            font-size: 1.6rem;
+            margin-top: 0.2rem;
+            body.light &{
+                color: fun.color('bg-dark');
+                opacity: .9;
+            }
+        }
+        li{
+            margin-bottom: 15px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            p:first-child{
+                opacity: .7;
+            }
+        }
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .list-characters{
+        a{
+            max-width: 100%;
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('mobile')){
+    .list-characters{
+        a{
+            flex-direction: column;
+            picture{
+                max-width: 100%;
+                max-height: 200px;
+                img{
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
+            ul{
+                width: 100%;
+                p{
+                    font-size: 1.6rem;
+                }
+                h2{
+                    font-size: 2.2rem;
+                }
+                h5{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}

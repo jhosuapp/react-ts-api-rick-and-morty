@@ -25,4 +25,9 @@ body{
     &::-webkit-scrollbar-track {
         border-radius: 10px; 
     }  
+    &.light{
+        &::-webkit-scrollbar-thumb {
+            background-color: f.color('primary');
+        }
+    }
 }
