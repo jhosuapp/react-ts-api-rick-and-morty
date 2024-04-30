@@ -1,0 +1,75 @@
+@use '../base/functions' as fun;
+
+.pager{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul{
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+    li{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: fun.color('white');
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .5s ease background-color;
+        body.light &{
+            background-color: fun.color('primary');
+            p{
+                color: fun.color('white');
+            }
+        }
+        &.active,
+        &:hover{
+            background-color: fun.color('primary');
+            p{
+                color: fun.color('white');
+            }
+            body.light &{
+                background-color: fun.color('white');
+                p{
+                    color: fun.color('primary');
+                }
+            }
+        }
+    }
+    p{
+        color: fun.color('bg-dark');
+        font-weight: 600;
+        font-size: 1.6rem;
+        transition: .5s ease color;
+    }
+    button{
+        all: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .5s ease all;
+        &:last-child{
+            margin-left: 20px;
+        }
+        &:first-child{
+            margin-right: 20px;
+        }
+        &:hover{
+            opacity: .6;
+        }
+        img{
+            filter: brightness(1000000%);
+            transition: .5s ease all;
+            position: relative;
+            width: 12.5px;
+            body.light &{
+                filter: none;
+            }
+        }
+    }
+}

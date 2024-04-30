@@ -1,7 +1,9 @@
+//Router hook
+import { Link } from 'react-router-dom';
 //Components
 import { HeroSection } from '../global/HeroSection';
 import { Container } from '../global/Container';
-import { Link } from 'react-router-dom';
+import { Pager } from '../functional/Pager';
 
 const Home = ():JSX.Element=>{
     return (
@@ -49,6 +51,7 @@ const Home = ():JSX.Element=>{
                         </ul>
                     </Link>
                     {/* Item */}
+                    <Pager />
                 </Container>
             </Container>
         </>
