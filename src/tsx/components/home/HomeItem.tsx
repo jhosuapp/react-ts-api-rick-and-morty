@@ -1,23 +1,27 @@
-import { Link } from "react-router-dom"
+//React hook
+import { Link } from "react-router-dom";
 
-const HomeItem = ():JSX.Element=>{
+const HomeItem = ({ character }: ICharacter ):JSX.Element=>{
+
+    const { id, name, status, species, image, location:{ name:nameLocation }, origin: { name:nameOrigin } } = character;
+
     return (
-        <Link to="/character/231312">
+        <Link to={`/character/${ id }`}>
             <picture>
-                <img src="https://rickandmortyapi.com/api/character/avatar/132.jpeg" alt="image" />
+                <img src={ image } alt={ name } />
             </picture>
             <ul>
                 <li>
-                    <h2>Gar's Mytholog</h2>
-                    <h5>dead - Mythological Creature</h5>
+                    <h2>{ name }</h2>
+                    <h5>{ status } - { species }</h5>
                 </li>
                 <li>
                     <p>Last known location:</p>
-                    <p>Nuptia 4</p>
+                    <p>{ nameLocation }</p>
                 </li>
                 <li>
-                    <p>First seen in:</p>
-                    <p>Big trouble in little Sanchez</p>
+                    <p>Origin:</p>
+                    <p>{ nameOrigin }</p>
                 </li>
             </ul>
         </Link>
