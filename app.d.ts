@@ -20,3 +20,19 @@ type ICharacter = {
         origin: { name: string }
     }
 }
+
+type IInfo = {
+    count: number,
+    pages: number,
+    next: string | null,
+    prev: string | null,
+}
+
+type IInfoPager = {
+    info: {
+        count: number,
+        pages: number,
+        next: string | null,
+        prev: string | null,
+    }
+}

@@ -12,10 +12,13 @@ import { useEffect, useState } from 'react';
 const Home = ():JSX.Element=>{
     //State    
     const [data, setData] = useState<ICharacters[]>([]);
+    const [infoData, setInfoData] = useState<IInfo | null>(null);
     //Get data
     useEffect(()=>{
         HomeRequest().then((response)=>{
-            setData(response.data.results);
+            const { results, info }= response.data;
+            setData(results);
+            info ? setInfoData(info as IInfo) : setInfoData(null);
         });
     }, []);
 
@@ -27,7 +30,7 @@ const Home = ():JSX.Element=>{
                     {data.map((character: ICharacters , index:number) => (
                         <HomeItem character={ character }  key={ index } />
                     ))}
-                    <Pager />
+                    {infoData && <Pager info={ infoData }/>}
                 </Container>
             </Container>
         </>

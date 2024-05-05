@@ -2,7 +2,7 @@
 import { baseAxios } from "../../config/Axios";
 
 //Type custom
-type IResponse = { data: { results: [] } }
+type IResponse = { data: { results: [], info: IInfo | null} }
 
 //request
 const HomeRequest = async ():Promise<IResponse> =>{
