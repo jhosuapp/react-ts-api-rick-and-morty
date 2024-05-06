@@ -11,7 +11,7 @@
         gap: 10px;
     }
     li{
-        width: 30px;
+        width: 70px;
         height: 30px;
         display: flex;
         align-items: center;
@@ -53,6 +53,10 @@
         align-items: center;
         cursor: pointer;
         transition: .5s ease all;
+        &.hidden{
+            opacity: 0;
+            pointer-events: none;
+        }
         &:last-child{
             margin-left: 20px;
         }
@@ -60,7 +64,7 @@
             margin-right: 20px;
         }
         &:hover{
-            opacity: .6;
+            opacity: 0.6;
         }
         img{
             filter: brightness(1000000%);

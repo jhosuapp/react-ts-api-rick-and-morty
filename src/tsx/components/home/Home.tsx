@@ -13,14 +13,15 @@ const Home = ():JSX.Element=>{
     //State    
     const [data, setData] = useState<[ICharacters] | null>(null);
     const [infoData, setInfoData] = useState<IInfo | null>(null);
+    const [counter, setCounter] = useState<number>(1);
     //Get data
     useEffect(()=>{
-        HomeRequest().then((response)=>{
+        HomeRequest(`https://rickandmortyapi.com/api/character?page=${counter}`).then((response)=>{
             const { results, info }= response?.data;
             results ? setData(results) :  setData(null);
             info ? setInfoData(info) : setInfoData(null);
         });
-    }, []);
+    }, [counter]);
 
     return (
         <>
@@ -30,7 +31,7 @@ const Home = ():JSX.Element=>{
                     { data && data.map((character: ICharacters , index:number) => (
                         <HomeItem character={ character }  key={ index } />
                     )) }
-                    { infoData && <Pager info={ infoData }/> }
+                    { infoData && <Pager counter={ counter }  setCounter={ setCounter } info={ infoData }/> }
                 </Container>
             </Container>
         </>

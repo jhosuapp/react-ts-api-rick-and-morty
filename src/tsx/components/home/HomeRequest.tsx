@@ -5,9 +5,9 @@ import { baseAxios } from "../../config/Axios";
 type IResponse = { data: { results: [ICharacters] | null, info: IInfo | null} }
 
 //request
-const HomeRequest = async ():Promise<IResponse> =>{
+const HomeRequest = async (url:string):Promise<IResponse> =>{
     try {
-        const response = await baseAxios.get('https://rickandmortyapi.com/api/character');
+        const response = await baseAxios.get(url);
         return response;
     }catch (error) {
         throw error;
