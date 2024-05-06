@@ -1,5 +1,7 @@
 //React hook
 import { Link } from "react-router-dom";
+//Lazy image component
+import { LazyImage } from '../functional/LazyImage';
 
 const HomeItem = ({ character }: ICharacter ):JSX.Element=>{
 
@@ -8,7 +10,7 @@ const HomeItem = ({ character }: ICharacter ):JSX.Element=>{
     return (
         <Link to={`/character/${ id }`}>
             <picture>
-                <img src={ image } alt={ name } />
+                <LazyImage src={image} alt={ name } />
             </picture>
             <ul>
                 <li>
