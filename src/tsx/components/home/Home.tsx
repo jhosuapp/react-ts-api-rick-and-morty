@@ -5,6 +5,8 @@ import { Pager } from '../functional/Pager';
 //Home components
 import { HomeItem } from './HomeItem';
 import { HomeRequest } from './HomeRequest';
+import { HomeSearch } from './HomeSearch';
+import { Form } from '../functional/Form';
 //Axios
 import { useEffect, useState } from 'react';
 
@@ -28,6 +30,9 @@ const Home = ():JSX.Element=>{
             <HeroSection className="hero-item" />
             <Container className="container--bg">
                 <Container className="container list-characters">
+                    <Form className='full-width'>
+                        <HomeSearch />
+                    </Form>
                     { data && data.map((character: ICharacters , index:number) => (
                         <HomeItem character={ character }  key={ index } />
                     )) }

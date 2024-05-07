@@ -5,6 +5,9 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+    .full-width{
+        width: 100%;
+    }
     a{
         display: flex;
         align-items: center;
