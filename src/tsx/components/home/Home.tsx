@@ -2,6 +2,7 @@
 import { HeroSection } from '../global/HeroSection';
 import { Container } from '../global/Container';
 import { Pager } from '../functional/Pager';
+import { Error } from '../global/Error';
 //Home components
 import { HomeItem } from './HomeItem';
 import { HomeRequest } from './HomeRequest';
@@ -9,9 +10,13 @@ import { HomeSearch } from './HomeSearch';
 import { Form } from '../functional/Form';
 //Axios
 import { useEffect, useState } from 'react';
+//Global context
+import { useGlobalContext } from '../../hooks/useGlobalContext'
 
 
 const Home = ():JSX.Element=>{
+    //Context
+    const { error, setError } = useGlobalContext();
     //State    
     const [data, setData] = useState<[ICharacters] | null>(null);
     const [infoData, setInfoData] = useState<IInfo | null>(null);
@@ -19,11 +24,15 @@ const Home = ():JSX.Element=>{
     const [counter, setCounter] = useState<number>(1);
     //Get data
     useEffect(()=>{
-        HomeRequest(`https://rickandmortyapi.com/api/character?page=${counter}`).then((response)=>{
-            console.log(response);
+        HomeRequest(`https://rickandmortyapi.com/api/character?page=${counter}&name=${search}`).then((response)=>{
             const { results, info }= response?.data;
             results ? setData(results) :  setData(null);
             info ? setInfoData(info) : setInfoData(null);
+            setError(false);
+        }).catch(err=>{
+            setData(null);
+            setInfoData(null);
+            setError(true);
         });
     }, [counter, search]);
 
@@ -39,6 +48,7 @@ const Home = ():JSX.Element=>{
                         <HomeItem character={ character }  key={ index } />
                     )) }
                     { infoData && <Pager counter={ counter }  setCounter={ setCounter } info={ infoData }/> }
+                    { error && <Error /> }
                 </Container>
             </Container>
         </>

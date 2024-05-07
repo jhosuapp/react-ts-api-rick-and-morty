@@ -1,11 +1,11 @@
 //Hooks react
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 //Types
 type Props = { children: ReactNode }
 //Types context
 type ContextType = {
-    // globalLight: string,
-    // setGlobalLight: (parameter:string)=> void,
+    error: boolean,
+    setError: (parameter:boolean)=> void,
 }
 
 
@@ -13,12 +13,12 @@ const GlobalContext = createContext<ContextType | undefined>(undefined);
  
 const GlobalProvider = ({ children }: Props)=>{
     //States
-    // const [globalLight, setGlobalLight] = useState<string>(localStorage.getItem('light') || '');
+    const [error, setError] = useState<boolean>(false);
 
     return (
         <GlobalContext.Provider value={{
-            // globalLight, 
-            // setGlobalLight
+            error, 
+            setError
         }}>
             { children }
         </GlobalContext.Provider>
