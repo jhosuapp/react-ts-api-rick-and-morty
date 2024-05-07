@@ -2,7 +2,7 @@
 
 .custom-input{
     input{
-        border: 2px solid fun.color('primary');
+        border: 2px solid fun.color('white');
         border-radius: 5px;
         padding: 10px;
         outline: inherit;
@@ -10,6 +10,9 @@
         transition: .5s ease box-shadow;
         font-size: 1.4rem;
         background-color: fun.color('bg');
+        body.light & {
+            border-color: fun.color('primary');
+        }
     }
     label{
         font-size: 1.4rem;

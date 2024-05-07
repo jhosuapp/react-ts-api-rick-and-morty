@@ -29,10 +29,11 @@ const Home = ():JSX.Element=>{
             results ? setData(results) :  setData(null);
             info ? setInfoData(info) : setInfoData(null);
             setError(false);
-        }).catch(err=>{
+        }).catch((err:string)=>{
             setData(null);
             setInfoData(null);
             setError(true);
+            console.log(err);
         });
     }, [counter, search]);
 
@@ -41,7 +42,7 @@ const Home = ():JSX.Element=>{
             <HeroSection className="hero-item" />
             <Container className="container--bg">
                 <Container className="container list-characters">
-                    <Form className='full-width custom-input search-characters'>
+                    <Form legend='Find character'  className='full-width custom-input search-characters'>
                         <HomeSearch setSearch={ setSearch } />
                     </Form>
                     { data && data.map((character: ICharacters , index:number) => (

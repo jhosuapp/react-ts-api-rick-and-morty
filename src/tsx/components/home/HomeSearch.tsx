@@ -12,6 +12,7 @@ const HomeSearch = ({ setSearch }: Props):JSX.Element=>{
     return(
         <fieldset>
             <input type="search" onChange={ handleChange } placeholder='Buscar por el nombre del personaje' name="search" id="search" />
+            <h4>Showing 20 results per page</h4>
         </fieldset>
     )
 }

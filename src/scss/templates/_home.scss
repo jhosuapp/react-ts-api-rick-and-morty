@@ -78,8 +78,31 @@
 }
 
 .search-characters{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    legend, h4{
+        color: fun.color('white');
+        body.light & {
+            color: fun.color('primary');
+        }
+    }
+    legend{
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
     fieldset{
-        max-width: calc(50% - 15px);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            max-width: calc(50% - 15px);
+        }
+        h4{
+            color: fun.color('white');
+            font-size: 2rem;
+        }
     }
 }
 
@@ -90,8 +113,19 @@
         }
     }
     .search-characters{
+        legend{
+            text-align: center;
+            font-size: 2.25rem;
+        }
         fieldset{
-            max-width: 100%;
+            flex-direction: column;
+            input{
+                max-width: 100%;
+            }
+            h4{
+                font-size: 1.6rem;
+                margin-top: 30px;
+            }
         }
     }
 }
