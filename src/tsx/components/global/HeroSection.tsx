@@ -12,10 +12,10 @@ const HeroSection = ( { ...PropsPicture }: Props):JSX.Element=>{
     return (
         <Container className='container hero-section container--relative container--center'>
             <picture { ...PropsPicture }>
-                <img  src={ imageHero } alt="hero image"/>
+                <img  src={ imageHero } loading="lazy" alt="hero image"/>
             </picture>
             <picture { ...PropsPicture }>
-                <img src={ bg } alt="background hero"/>
+                <img src={ bg } loading="lazy" alt="background hero"/>
             </picture>
         </Container>
     )

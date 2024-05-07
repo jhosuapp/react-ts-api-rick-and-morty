@@ -75,6 +75,18 @@ header{
     header{
         position: fixed;
         left: 5%;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 112%;
+            height: 100%;
+            left: -6%;
+            top: 0;
+            background-color: fun.color('bg');
+            body.light &{
+                background-color: fun.color('white');
+            }
+        }
         svg, img{
             width: 4rem;
         }

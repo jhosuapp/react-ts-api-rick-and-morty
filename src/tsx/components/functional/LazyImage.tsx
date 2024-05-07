@@ -30,7 +30,7 @@ const LazyImage = ( { src, ...imgAtr }: Props ):JSX.Element=>{
     }, [src]);
     //Return
     return(
-        <img ref={ node } src={ currentSrc } { ...imgAtr } />
+        <img ref={ node } src={ currentSrc } { ...imgAtr } loading="lazy"/>
     )
 }
 
