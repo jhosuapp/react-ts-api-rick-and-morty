@@ -2,16 +2,14 @@
 
 .custom-input{
     input{
-        border: 2px solid fun.color('secondary');
+        border: 2px solid fun.color('primary');
         border-radius: 5px;
         padding: 10px;
         outline: inherit;
         width: 100%;
         transition: .5s ease box-shadow;
         font-size: 1.4rem;
-        &:focus{
-            box-shadow: 0 0 5px #d3d3d3;
-        }
+        background-color: fun.color('bg');
     }
     label{
         font-size: 1.4rem;
@@ -19,6 +17,9 @@
         font-weight: 500;
         margin-bottom: 5px;
         display: flex;
+    }
+    fieldset{
+        border: none;
     }
     .block-input{
         margin-bottom: 20px;

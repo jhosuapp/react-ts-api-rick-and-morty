@@ -77,9 +77,20 @@
     }
 }
 
+.search-characters{
+    fieldset{
+        max-width: calc(50% - 15px);
+    }
+}
+
 @media(max-width: fun.breakpoints('ipad-big')){
     .list-characters{
         a{
+            max-width: 100%;
+        }
+    }
+    .search-characters{
+        fieldset{
             max-width: 100%;
         }
     }
