@@ -17,6 +17,7 @@
         position: relative;
         overflow: hidden;
         border-radius: 10px;
+        pointer-events: none;
         body.light & {
             background-color: white;
         }
