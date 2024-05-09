@@ -12,16 +12,19 @@ import { Form } from '../functional/Form';
 import { useEffect, useState } from 'react';
 //Global context
 import { useGlobalContext } from '../../hooks/useGlobalContext'
-
+//Redux
+import type { RootState } from '../../store';
+import { useSelector } from 'react-redux';
 
 const Home = ():JSX.Element=>{
+    const { counter } = useSelector((state: RootState) => state.counter );
+
     //Context
     const { error, setError } = useGlobalContext();
     //State    
     const [data, setData] = useState<[ICharacters] | null>(null);
     const [infoData, setInfoData] = useState<IInfo | null>(null);
     const [search, setSearch] = useState<string>('');
-    const [counter, setCounter] = useState<number>(1);
     //Get data
     useEffect(()=>{
         HomeRequest(`https://rickandmortyapi.com/api/character?page=${counter}&name=${search}`).then((response)=>{
@@ -48,7 +51,7 @@ const Home = ():JSX.Element=>{
                     { data && data.map((character: ICharacters , index:number) => (
                         <HomeItem character={ character }  key={ index } />
                     )) }
-                    { infoData && <Pager counter={ counter }  setCounter={ setCounter } info={ infoData }/> }
+                    { infoData && <Pager info={ infoData }/> }
                     { error && <Error /> }
                 </Container>
             </Container>

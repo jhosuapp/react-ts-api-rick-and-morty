@@ -1,25 +1,23 @@
+//Redux
+import type { RootState } from '../../store';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from '../../store/slices/counter';
+//Icons
 import IconLeft from '../../../assets/svg/icon-arrow-left.svg';
 import IconRight from '../../../assets/svg/icon-arrow-right.svg';
+//Types
+type Props = IInfoPager;
 
-type ICounter = {
-    counter: number,
-    setCounter: (parameter:number)=> void,
-}
+const Pager = ({ info }: Props):JSX.Element =>{
 
-type Props = ICounter & IInfoPager;
-
-
-const Pager = ({ info, setCounter, counter }: Props):JSX.Element =>{
+    const { counter } = useSelector((state: RootState)=> state.counter );
+    const dispatch = useDispatch();
 
     const { pages, prev, next  } = info;
 
-    const handleClick = (page: number)=>{
-        setCounter(counter + page)
-    }
-
     return (
         <article className="pager">
-            <button className={`${!prev ? 'hidden' : ''}`} onClick={ ()=>{ handleClick(-1) } }>
+            <button className={`${!prev ? 'hidden' : ''}`} onClick={ ()=>{ dispatch(decrement()) } }>
                 <img src={ IconLeft } alt="Icon left" />
             </button>
             <ul>
@@ -27,7 +25,7 @@ const Pager = ({ info, setCounter, counter }: Props):JSX.Element =>{
                     <p>{`${counter}/${pages}`}</p>
                 </li>
             </ul>
-            <button className={`${!next ? 'hidden' : ''}`} onClick={ ()=>{ handleClick(1) } }>
+            <button className={`${!next ? 'hidden' : ''}`} onClick={ ()=>{ dispatch(increment()) } }>
                 <img src={ IconRight } alt="Icon Right" />
             </button>
         </article>
