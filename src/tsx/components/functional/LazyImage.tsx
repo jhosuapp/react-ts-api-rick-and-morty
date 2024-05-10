@@ -1,15 +1,21 @@
+//Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { setImage } from '../../store/slices/lazyImage';
+import { RootState } from '../../store/';
 //React hooks
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 //Types react
-import type { ImgHTMLAttributes } from "react";
+import type { ImgHTMLAttributes } from 'react';
 //Create type
 type PropsNative = ImgHTMLAttributes<HTMLImageElement>;
 type PropsCustom = { src: string }
 type Props = PropsNative & PropsCustom;
 
+
 const LazyImage = ( { src, ...imgAtr }: Props ):JSX.Element=>{
-    //State
-    const [currentSrc, setCurrentSrc] = useState<string>('');
+    //Redux image
+    const loadedImage = useSelector((state: RootState) => state.lazyImage.images[src]);
+    const dispatch = useDispatch();
     //Node
     const node = useRef<HTMLImageElement>(null);
     useEffect(()=>{
@@ -17,7 +23,7 @@ const LazyImage = ( { src, ...imgAtr }: Props ):JSX.Element=>{
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach((entry)=>{
                 if(entry.isIntersecting){
-                    setCurrentSrc(src);
+                    dispatch(setImage({ image: src }));
                 }
             })
         });
@@ -30,7 +36,7 @@ const LazyImage = ( { src, ...imgAtr }: Props ):JSX.Element=>{
     }, [src]);
     //Return
     return(
-        <img ref={ node } src={ currentSrc } { ...imgAtr } loading="lazy"/>
+        <img ref={ node } src={ loadedImage } { ...imgAtr } loading="lazy"/>
     )
 }
 

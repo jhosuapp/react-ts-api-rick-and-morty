@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 //Slices
 import { counterSlice } from './slices/counter';
+import { lazyImageSlice } from './slices/lazyImage';
 
 export const store = configureStore({
     reducer: {
-        counter: counterSlice.reducer
+        counter: counterSlice.reducer,
+        lazyImage: lazyImageSlice.reducer
     },
 });
 
