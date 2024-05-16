@@ -18,13 +18,12 @@ import { useSelector } from 'react-redux';
 
 const Home = ():JSX.Element=>{
     const { counter } = useSelector((state: RootState) => state.counter );
-
+    const { search } = useSelector((state: RootState) => state.search );
     //Context
     const { error, setError } = useGlobalContext();
     //State    
     const [data, setData] = useState<[ICharacters] | null>(null);
     const [infoData, setInfoData] = useState<IInfo | null>(null);
-    const [search, setSearch] = useState<string>('');
     //Get data
     useEffect(()=>{
         HomeRequest(`https://rickandmortyapi.com/api/character?page=${counter}&name=${search}`).then((response)=>{
@@ -46,7 +45,7 @@ const Home = ():JSX.Element=>{
             <Container className="container--bg">
                 <Container className="container list-characters">
                     <Form legend='Find character'  className='full-width custom-input search-characters'>
-                        <HomeSearch setSearch={ setSearch } />
+                        <HomeSearch />
                     </Form>
                     { data && data.map((character: ICharacters , index:number) => (
                         <HomeItem character={ character }  key={ index } />

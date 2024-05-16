@@ -1,12 +1,15 @@
+//Redux
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../store/slices/search';
 //Types react
 import type { ChangeEventHandler } from 'react';
-//Props
-type Props = { setSearch: (parameter:string) => void }
 
-const HomeSearch = ({ setSearch }: Props):JSX.Element=>{
+const HomeSearch = ():JSX.Element=>{
+    //Store
+    const dispatch = useDispatch();
     //Handle event
     const handleChange:ChangeEventHandler<HTMLInputElement> = (e):void=>{
-        setSearch(e.target.value);
+        dispatch(setSearch(e.target.value));
     }
 
     return(

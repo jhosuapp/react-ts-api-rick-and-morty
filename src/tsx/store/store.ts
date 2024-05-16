@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 //Slices
 import { counterSlice } from './slices/counter';
 import { lazyImageSlice } from './slices/lazyImage';
+import { searchSlice } from './slices/search';
 
 export const store = configureStore({
     reducer: {
         counter: counterSlice.reducer,
-        lazyImage: lazyImageSlice.reducer
+        lazyImage: lazyImageSlice.reducer,
+        search: searchSlice.reducer
     },
 });
 
