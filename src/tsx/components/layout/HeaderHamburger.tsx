@@ -1,14 +1,20 @@
-import { useRef, useState } from "react"
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { setHamburger } from '../../store/slices/hamburger';
+import type { RootState } from '../../store';
+//React hooks
+import { useRef } from "react";
 
 const HeaderHamburger = ():JSX.Element =>{
-    //State
-    const [hamburger, setHamburger] = useState<boolean>(false);
+    //Store
+    const dispatch = useDispatch();
+    const { hamburger } = useSelector((state: RootState) => state.hamburger );
     //Ref
     const node = useRef<HTMLDivElement>(null);
     //Handle
     const handleClick = ():void=>{
         const header = node.current?.parentElement;
-        setHamburger(!hamburger);
+        dispatch(setHamburger());
         hamburger ? header?.classList.remove('active') : header?.classList.add('active');
     }
 
